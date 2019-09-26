@@ -1,7 +1,8 @@
 import { NgModule } from '@angular/core';
+import { MenuComponent } from './menu/menu.component';
 
 @NgModule({
-	declarations: [],
+	declarations: [MenuComponent],
 	imports: [],
 	exports: []
 })
