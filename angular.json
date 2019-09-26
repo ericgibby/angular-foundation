@@ -35,6 +35,122 @@
 					}
 				}
 			}
+		},
+		"angular-foundation-demo": {
+			"projectType": "application",
+			"schematics": {
+				"@schematics/angular:component": {
+					"style": "scss"
+				}
+			},
+			"root": "projects/angular-foundation-demo",
+			"sourceRoot": "projects/angular-foundation-demo/src",
+			"prefix": "app",
+			"architect": {
+				"build": {
+					"builder": "@angular-devkit/build-angular:browser",
+					"options": {
+						"outputPath": "dist/angular-foundation-demo",
+						"index": "projects/angular-foundation-demo/src/index.html",
+						"main": "projects/angular-foundation-demo/src/main.ts",
+						"polyfills": "projects/angular-foundation-demo/src/polyfills.ts",
+						"tsConfig": "projects/angular-foundation-demo/tsconfig.app.json",
+						"aot": false,
+						"assets": [
+							"projects/angular-foundation-demo/src/favicon.ico",
+							"projects/angular-foundation-demo/src/assets"
+						],
+						"styles": ["projects/angular-foundation-demo/src/styles.scss"],
+						"scripts": []
+					},
+					"configurations": {
+						"production": {
+							"fileReplacements": [
+								{
+									"replace": "projects/angular-foundation-demo/src/environments/environment.ts",
+									"with": "projects/angular-foundation-demo/src/environments/environment.prod.ts"
+								}
+							],
+							"optimization": true,
+							"outputHashing": "all",
+							"sourceMap": false,
+							"extractCss": true,
+							"namedChunks": false,
+							"aot": true,
+							"extractLicenses": true,
+							"vendorChunk": false,
+							"buildOptimizer": true,
+							"budgets": [
+								{
+									"type": "initial",
+									"maximumWarning": "2mb",
+									"maximumError": "5mb"
+								},
+								{
+									"type": "anyComponentStyle",
+									"maximumWarning": "6kb",
+									"maximumError": "10kb"
+								}
+							]
+						}
+					}
+				},
+				"serve": {
+					"builder": "@angular-devkit/build-angular:dev-server",
+					"options": {
+						"browserTarget": "angular-foundation-demo:build"
+					},
+					"configurations": {
+						"production": {
+							"browserTarget": "angular-foundation-demo:build:production"
+						}
+					}
+				},
+				"extract-i18n": {
+					"builder": "@angular-devkit/build-angular:extract-i18n",
+					"options": {
+						"browserTarget": "angular-foundation-demo:build"
+					}
+				},
+				"test": {
+					"builder": "@angular-devkit/build-angular:karma",
+					"options": {
+						"main": "projects/angular-foundation-demo/src/test.ts",
+						"polyfills": "projects/angular-foundation-demo/src/polyfills.ts",
+						"tsConfig": "projects/angular-foundation-demo/tsconfig.spec.json",
+						"karmaConfig": "projects/angular-foundation-demo/karma.conf.js",
+						"assets": [
+							"projects/angular-foundation-demo/src/favicon.ico",
+							"projects/angular-foundation-demo/src/assets"
+						],
+						"styles": ["projects/angular-foundation-demo/src/styles.scss"],
+						"scripts": []
+					}
+				},
+				"lint": {
+					"builder": "@angular-devkit/build-angular:tslint",
+					"options": {
+						"tsConfig": [
+							"projects/angular-foundation-demo/tsconfig.app.json",
+							"projects/angular-foundation-demo/tsconfig.spec.json",
+							"projects/angular-foundation-demo/e2e/tsconfig.json"
+						],
+						"exclude": ["**/node_modules/**"]
+					}
+				},
+				"e2e": {
+					"builder": "@angular-devkit/build-angular:protractor",
+					"options": {
+						"protractorConfig": "projects/angular-foundation-demo/e2e/protractor.conf.js",
+						"devServerTarget": "angular-foundation-demo:serve"
+					},
+					"configurations": {
+						"production": {
+							"devServerTarget": "angular-foundation-demo:serve:production"
+						}
+					}
+				}
+			}
 		}
 	},
 	"schematics": {
