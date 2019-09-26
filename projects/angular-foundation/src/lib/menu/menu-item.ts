@@ -1,4 +1,5 @@
 export class MenuItem {
-	link: string | any[];
+	href?: string | null | undefined;
+	onClick?: EventListener | undefined;
 	text: string;
 }

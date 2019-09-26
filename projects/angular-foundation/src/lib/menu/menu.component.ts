@@ -12,4 +12,10 @@ export class MenuComponent implements OnInit {
 	constructor() {}
 
 	ngOnInit() {}
+
+	handleClick(event: Event, listener?: EventListener) {
+		if (listener) {
+			listener(event);
+		}
+	}
 }
