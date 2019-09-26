@@ -1,6 +1,6 @@
 {
-	"name": "angular-foundation",
-	"version": "0.0.0",
+	"name": "@ericgibby/angular-foundation",
+	"version": "0.1.0",
 	"scripts": {
 		"ng": "ng",
 		"start": "ng serve",
