@@ -3,7 +3,8 @@
 	"version": "0.1.0",
 	"peerDependencies": {
 		"@angular/common": "^8.2.8",
-		"@angular/core": "^8.2.8"
+		"@angular/core": "^8.2.8",
+		"@angular/platform-browser": "~8.2.8"
 	},
 	"dependencies": {
 		"foundation-sites": "^6.5.3"
