@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { MenuItem } from './menu-item';
 
 @Component({
 	selector: 'af-menu',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 	styleUrls: ['./menu.component.scss']
 })
 export class MenuComponent implements OnInit {
+	@Input() items: MenuItem[];
+
 	constructor() {}
 
 	ngOnInit() {}
