@@ -1,5 +1,5 @@
 export class MenuItem {
 	href?: string | null | undefined;
-	onClick?: EventListener | undefined;
+	onClick?: CallableFunction | null | undefined;
 	text: string;
 }

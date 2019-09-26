@@ -13,9 +13,10 @@ export class MenuComponent implements OnInit {
 
 	ngOnInit() {}
 
-	handleClick(event: Event, listener?: EventListener) {
-		if (listener) {
-			listener(event);
+	handleClick(event: Event, item: MenuItem) {
+		const { href, onClick } = item;
+		if (onClick) {
+			onClick(event, href);
 		}
 	}
 }

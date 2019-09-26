@@ -1,5 +1,5 @@
 <ul class="menu" *ngIf="!!items">
 	<li *ngFor="let item of items">
-		<a (click)="handleClick($event, item.onClick)" [href]="item.href" [innerHTML]="item.text"></a>
+		<a (click)="handleClick($event, item)" [href]="item.href" [innerHTML]="item.text"></a>
 	</li>
 </ul>
