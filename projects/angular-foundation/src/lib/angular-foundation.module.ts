@@ -1,9 +1,8 @@
 import { NgModule } from '@angular/core';
-import { AngularFoundationComponent } from './angular-foundation.component';
 
 @NgModule({
-	declarations: [AngularFoundationComponent],
+	declarations: [],
 	imports: [],
-	exports: [AngularFoundationComponent]
+	exports: []
 })
 export class AngularFoundationModule {}
