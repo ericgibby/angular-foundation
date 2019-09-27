@@ -1,5 +1,5 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { AngularFoundationModule } from '../../../../../angular-foundation/src/lib/angular-foundation.module';
 import { TableComponent } from './table.component';
 
 describe('TableComponent', () => {
@@ -8,7 +8,8 @@ describe('TableComponent', () => {
 
 	beforeEach(async(() => {
 		TestBed.configureTestingModule({
-			declarations: [TableComponent]
+			declarations: [TableComponent],
+			imports: [AngularFoundationModule]
 		}).compileComponents();
 	}));
 
