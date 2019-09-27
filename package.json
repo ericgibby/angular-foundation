@@ -1,6 +1,12 @@
 {
 	"name": "@ericgibby/angular-foundation",
 	"version": "0.1.0",
+	"repository": {
+		"type": "git",
+		"url": "ssh://git@github.com:ericgibby/angular-foundation.git"
+	},
+	"author": "Eric Gibby",
+	"license": "MIT",
 	"scripts": {
 		"ng": "ng",
 		"start": "ng serve",
