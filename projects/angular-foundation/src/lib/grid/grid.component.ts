@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { GridColumn } from './grid-column';
 
 @Component({
 	selector: 'af-grid',
@@ -6,6 +7,9 @@ import { Component, OnInit } from '@angular/core';
 	styleUrls: ['./grid.component.scss']
 })
 export class GridComponent implements OnInit {
+	@Input() columns: GridColumn[];
+	@Input() data: any[];
+
 	constructor() {}
 
 	ngOnInit() {}
