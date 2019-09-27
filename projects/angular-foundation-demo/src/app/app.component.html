@@ -1,4 +1,11 @@
-<h1>Angular Foundation</h1>
-<header class="top-bar">
-	<af-menu [items]="items"></af-menu>
+<header>
+	<h1 class="grid-container">Angular Foundation</h1>
+	<div class="top-bar">
+		<nav class="grid-container flex-child-grow">
+			<af-menu [items]="items"></af-menu>
+		</nav>
+	</div>
 </header>
+<div class="grid-container">
+	<router-outlet></router-outlet>
+</div>
