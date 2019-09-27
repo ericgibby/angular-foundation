@@ -6,6 +6,8 @@
 		"start": "ng serve",
 		"build": "ng build",
 		"postbuild": "cpx \"projects/angular-foundation/src/scss/**/*\" \"dist/angular-foundation/scss\" && cpx \"projects/angular-foundation/src/assets/**/*\" \"dist/angular-foundation/assets\"",
+		"prepackage": "npm run build",
+		"package": "cd dist/angular-foundation && npm pack",
 		"test": "ng test",
 		"lint": "ng lint",
 		"e2e": "ng e2e"
