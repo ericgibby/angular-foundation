@@ -22,8 +22,8 @@ export class AppComponent implements OnInit {
 	ngOnInit() {
 		this.items = [
 			{ href: '/', text: 'Home', onClick: this.handleClick.bind(this) },
-			{ href: '/grid', text: 'Grid Component', onClick: this.handleClick.bind(this) },
-			{ href: '/menu', text: 'Menu Component', onClick: this.handleClick.bind(this) }
+			{ href: '/menu', text: 'Menu Component', onClick: this.handleClick.bind(this) },
+			{ href: '/table', text: 'Table Component', onClick: this.handleClick.bind(this) }
 		];
 	}
 }

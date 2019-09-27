@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
-import { MenuComponent } from './menu/menu.component';
 import { BrowserModule } from '@angular/platform-browser';
-import { GridComponent } from './grid/grid.component';
+import { MenuComponent } from './menu/menu.component';
+import { TableComponent } from './table/table.component';
 
-const libraryComponents = [GridComponent, MenuComponent];
+const libraryComponents = [TableComponent, MenuComponent];
 
 @NgModule({
 	declarations: [...libraryComponents],

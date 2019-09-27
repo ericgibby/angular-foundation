@@ -1,4 +1,4 @@
-export class GridColumn {
+export class TableColumn {
 	key: string;
 	title: string;
 }

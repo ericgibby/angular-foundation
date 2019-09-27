@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-	selector: 'app-grid',
-	templateUrl: './grid.component.html',
-	styleUrls: ['./grid.component.scss']
+	selector: 'app-table',
+	templateUrl: './table.component.html',
+	styleUrls: ['./table.component.scss']
 })
-export class GridComponent implements OnInit {
+export class TableComponent implements OnInit {
 	columns = [
 		{ key: 'firstName', title: 'First Name' },
 		{ key: 'lastName', title: 'Last Name' },
