@@ -1,6 +1,6 @@
 {
 	"name": "@ericgibby/angular-foundation",
-	"version": "0.1.0",
+	"version": "0.1.1",
 	"repository": {
 		"type": "git",
 		"url": "ssh://git@github.com:ericgibby/angular-foundation.git"
