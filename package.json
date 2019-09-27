@@ -8,7 +8,8 @@
 		"postbuild": "cpx \"projects/angular-foundation/src/scss/**/*\" \"dist/angular-foundation/scss\" && cpx \"projects/angular-foundation/src/assets/**/*\" \"dist/angular-foundation/assets\"",
 		"prepackage": "npm run build",
 		"package": "cd dist/angular-foundation && npm pack",
-		"test": "ng test",
+		"test": "ng test --project=angular-foundation",
+		"test:demo": "ng test --project=angular-foundation-demo",
 		"lint": "ng lint",
 		"e2e": "ng e2e"
 	},
