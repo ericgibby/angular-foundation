@@ -1,24 +1,17 @@
-import { CommonModule } from '@angular/common';
 import { Injector, NgModule } from '@angular/core';
 import { createCustomElement } from '@angular/elements';
-import { MenuComponent } from '../menu/menu.component';
-import { TableComponent } from '../table/table.component';
-
-const elements: Array<{ selector: string; component: any }> = [
-	{ selector: 'af-menu', component: MenuComponent },
-	{ selector: 'af-table', component: TableComponent }
-];
-
-const components = [MenuComponent, TableComponent];
+import { kebabCase } from 'lodash';
+import { AF_COMPONENTS, SharedModule } from '../shared.module';
 
 @NgModule({
 	declarations: [],
-	imports: [CommonModule],
-	entryComponents: [...components]
+	imports: [SharedModule],
+	entryComponents: [AF_COMPONENTS]
 })
 export class AngularFoundationElementsModule {
 	constructor(injector: Injector) {
-		elements.forEach(({ selector, component }) => {
+		AF_COMPONENTS.forEach(component => {
+			const selector = 'af-' + kebabCase(component.name.replace(/Component/i, ''));
 			const elem = createCustomElement(component, { injector });
 			customElements.define(selector, elem);
 		});

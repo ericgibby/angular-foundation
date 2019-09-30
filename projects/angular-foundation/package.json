@@ -10,10 +10,10 @@
 	"peerDependencies": {
 		"@angular/common": "^8.2.8",
 		"@angular/core": "^8.2.8",
-		"@angular/elements": "^8.2.8",
-		"@angular/platform-browser": "^8.2.8"
+		"@angular/elements": "^8.2.8"
 	},
 	"dependencies": {
-		"foundation-sites": "^6.5.3"
+		"foundation-sites": "^6.5.3",
+		"lodash": "^4.17.15"
 	}
 }
