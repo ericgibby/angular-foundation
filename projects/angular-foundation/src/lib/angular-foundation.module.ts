@@ -1,13 +1,8 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import { MenuComponent } from './menu/menu.component';
-import { TableComponent } from './table/table.component';
-
-const libraryComponents = [TableComponent, MenuComponent];
+import { SharedModule } from './shared.module';
 
 @NgModule({
-	declarations: [...libraryComponents],
-	imports: [BrowserModule],
-	exports: [...libraryComponents]
+	imports: [SharedModule],
+	exports: [SharedModule]
 })
 export class AngularFoundationModule {}
