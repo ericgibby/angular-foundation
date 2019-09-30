@@ -1,7 +1,7 @@
 import { Injector, NgModule } from '@angular/core';
 import { createCustomElement } from '@angular/elements';
 import { kebabCase } from 'lodash';
-import { AF_COMPONENTS, SharedModule } from '../shared.module';
+import { AF_COMPONENTS, SharedModule } from './shared.module';
 
 @NgModule({
 	declarations: [],

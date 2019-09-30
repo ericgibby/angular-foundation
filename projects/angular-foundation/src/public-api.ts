@@ -3,9 +3,7 @@
  */
 
 export * from './lib/angular-foundation.module';
-
-// elements
-export * from './lib/elements/angular-foundation-elements.module';
+export * from './lib/angular-foundation-elements.module';
 
 // menu
 export * from './lib/menu/menu-item';
