@@ -6,7 +6,7 @@ import { AF_COMPONENTS, SharedModule } from './shared.module';
 @NgModule({
 	declarations: [],
 	imports: [SharedModule],
-	entryComponents: [AF_COMPONENTS]
+	entryComponents: [...AF_COMPONENTS]
 })
 export class AngularFoundationElementsModule {
 	constructor(injector: Injector) {
