@@ -1,5 +1,5 @@
-<ul class="menu" *ngIf="!!items">
-	<li *ngFor="let item of items">
+<ul class="menu" *ngIf="state.hasItems">
+	<li *ngFor="let item of state.items">
 		<a (click)="handleClick($event, item)" [href]="item.href" [innerHTML]="item.text"></a>
 	</li>
 </ul>
