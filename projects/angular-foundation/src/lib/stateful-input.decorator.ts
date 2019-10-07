@@ -1,7 +1,7 @@
-import { StatefulComponent } from './stateful-component';
+import { StatefulComponent, StatefulInputType } from './stateful-component';
 
-export function StatefulInput<StateType>(isString = false) {
-	return (target: StatefulComponent<StateType>, propertyName: string) => {
-		target.registerStatefulInput(propertyName, isString);
+export function StatefulInput(inputType: StatefulInputType) {
+	return (target: StatefulComponent, propertyName: string) => {
+		target.registerStatefulInput(propertyName, inputType);
 	};
 }

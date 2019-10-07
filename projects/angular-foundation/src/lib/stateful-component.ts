@@ -1,8 +1,19 @@
 import { ChangeDetectorRef, OnChanges, SimpleChanges } from '@angular/core';
 
-export abstract class StatefulComponent<StateType> implements OnChanges {
-	private inputs: { [key: string]: boolean };
-	state: Partial<StateType> = {};
+export enum StatefulInputType {
+	Undefined = 'undefined',
+	Object = 'object',
+	Boolean = 'boolean',
+	Number = 'number',
+	BigInt = 'bigint',
+	String = 'string',
+	Symbol = 'symbol',
+	Function = 'function'
+}
+
+export abstract class StatefulComponent implements OnChanges {
+	private inputs: { [key: string]: StatefulInputType };
+	state: { [key: string]: any } = {};
 
 	constructor(protected cd: ChangeDetectorRef) {}
 
@@ -10,16 +21,16 @@ export abstract class StatefulComponent<StateType> implements OnChanges {
 		return typeof input === 'string' ? (JSON.parse(input) as Partial<T>) : input;
 	}
 
-	protected setState(state: Partial<StateType>) {
+	protected setState(state: { [key: string]: any }) {
 		this.state = { ...this.state, ...state };
 		this.cd.markForCheck();
 	}
 
-	registerStatefulInput(key: string, isString: boolean) {
+	registerStatefulInput(key: string, inputType: StatefulInputType) {
 		if (!this.inputs) {
 			this.inputs = {};
 		}
-		this.inputs[key] = isString;
+		this.inputs[key] = inputType;
 	}
 
 	ngOnChanges(changes: SimpleChanges) {
@@ -28,7 +39,7 @@ export abstract class StatefulComponent<StateType> implements OnChanges {
 				return state;
 			}
 			let value = changes[key].currentValue;
-			if (typeof value === 'string' && !this.inputs[key]) {
+			if (typeof value !== this.inputs[key] && !!value) {
 				value = JSON.parse(value);
 			}
 			return { ...state, [key]: value };

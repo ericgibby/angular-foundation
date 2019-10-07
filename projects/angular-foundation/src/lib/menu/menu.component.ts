@@ -1,20 +1,15 @@
 import { ChangeDetectorRef, Component, Input, OnChanges, SimpleChanges } from '@angular/core';
-import { StatefulComponent } from '../stateful-component';
+import { StatefulComponent, StatefulInputType } from '../stateful-component';
 import { StatefulInput } from '../stateful-input.decorator';
 import { MenuItem } from './menu-item';
-
-class MenuState {
-	hasItems: boolean;
-	items: MenuItem[];
-}
 
 @Component({
 	selector: 'af-menu',
 	templateUrl: './menu.component.html',
 	styleUrls: ['./menu.component.scss']
 })
-export class MenuComponent extends StatefulComponent<MenuState> implements OnChanges {
-	@StatefulInput<MenuState>() @Input() items: MenuItem[] | string;
+export class MenuComponent extends StatefulComponent implements OnChanges {
+	@StatefulInput(StatefulInputType.Object) @Input() items: MenuItem[] | string;
 
 	constructor(protected cd: ChangeDetectorRef) {
 		super(cd);
